@@ -7,7 +7,10 @@ from bs4 import BeautifulSoup
 import pandas as pd
 from time import sleep
 import re
+import os
 
+
+cwd = os.getcwd()
 
 
 driver = webdriver.Firefox()
@@ -133,4 +136,4 @@ statsDF
 
 # obviously change this to your local repository
 print('writing excel')
-pd.DataFrame.to_excel(statsDF, f"/home/yavor/projects/PythonProjects/nba/DailyGameLogs/stats.xlsx")
+pd.DataFrame.to_excel(statsDF, f"stats.xlsx")

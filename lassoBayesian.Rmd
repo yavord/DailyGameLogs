@@ -7,12 +7,31 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 library(readxl)
 library(glmnet)
+library(magrittr)
+library(dplyr)
+library(lubridate)
+library(purrr)
 ```
 
-Data exploration
+Data import
 ```{r}
-data <- read_excel('stats.xlsx')
+data <- read_xlsx('stats.xlsx')
+```
+lubridate test
+```{r echo=FALSE, eval=FALSE}
+test <- "00:27:28"
+test2 <- period_to_seconds(hms(test))
+
+x <- "27:28"
+y <- paste("00:", x, sep = "")
+z <- period_to_seconds(hms(y))
 ```
 
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+PCA
+```{r}
+# Convert min:sec to hour:min:sec to seconds
+
+```
+
+
